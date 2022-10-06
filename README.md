@@ -1,6 +1,6 @@
 # Basic Bot with PHP for Google Analytics 4
-1. [Installation](https://github.com/googleapis/php-analytics-data#installation)
-2. [How to use?](https://github.com/googleapis/php-analytics-data#installation)
+1. [Installation](https://github.com/bberkay/gabot-v1#installation)
+2. [How to use?](https://github.com/bberkay/gabot-v1#how-to-use)
 ## Installation
 #### What you need?
 * [Composer](https://getcomposer.org/Composer-Setup.exe)
