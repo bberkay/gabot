@@ -1,0 +1,43 @@
+[
+    {
+       "country_city_active1DayUsers_active28DayUsers":[
+          {
+             "country":"Turkey",
+             "city":"Istanbul",
+             "active1DayUsers":"211",
+             "active28DayUsers":"1240"
+          },
+          {
+             "country":"United States",
+             "city":"New York",
+             "active1DayUsers":"12",
+             "active28DayUsers":"92"
+          }
+       ]
+    },
+    {
+       "activeUsers":[
+          {
+             "activeUsers":"14"
+          }
+       ]
+    },
+    {
+       "activeUsers_active28DayUsers":[
+          {
+             "activeUsers":"223",
+             "active28DayUsers":"1352"
+          }
+       ]
+    },
+    {
+       "hostName":[
+          {
+             "hostName":"site.com"
+          },
+          {
+             "hostName":"www.site.com"
+          }
+       ]
+    }
+ ]
