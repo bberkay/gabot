@@ -9,7 +9,7 @@ $gabot = Gabot::getInstance();
 $gabot->setAuth("GA4-PROPERTY-ID");
 $gabot->addRequest([ // Non-realtime request get array<Query>
     new Query(
-        // non-realtime query must gate date ranges for more https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
+        // non-realtime query must take date ranges for more https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
         date_ranges:["start_date" => "28daysAgo", "end_date" => "today"],
         dimensions:["country", "city"], 
         metrics:["active1DayUsers", "active28DayUsers"]
