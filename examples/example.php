@@ -6,7 +6,7 @@ use Gabot\Model\Query;
 
 // Gabot Non-realtime Example
 $gabot = Gabot::getInstance();
-$gabot->setAuth("332338551");
+$gabot->setAuth("GA4-PROPERTY-ID");
 $gabot->addRequest([ // Non-realtime request get array<Query>
     new Query(
         // non-realtime query must gate date ranges for more https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
