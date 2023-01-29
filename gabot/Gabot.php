@@ -56,7 +56,7 @@ class Gabot extends Client
      * Google Analytics 4 Response
      * @return this
      */
-    public function makeApiCall()
+    public function makeApiCall()                     
     {
         if($this->realtime)
             $this->response = $this->client->runRealtimeReport($this->request);          
