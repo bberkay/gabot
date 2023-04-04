@@ -3,10 +3,10 @@
 2. [How to use?](https://github.com/bberkay/gabot-alpha#how-to-use)
 ## Installation
 #### What you need?
-* [Composer](https://getcomposer.org/Composer-Setup.exe)
-* [Google Analytics 4 Account and "credentials.json"](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#step_1_enable_the_api)
+* Google Analytics 4 and Google Cloud Console Accounts
+* [credentials.json](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#step_1_enable_the_api)(this json file has contains keys like `type`, `project_id`, `private_key_id`).
 
-After downloading composer run this command with cmd in `'gabot'` folder
+Run this command with cmd in `'gabot'` folder(don't forget to install [composer](https://getcomposer.org/Composer-Setup.exe))
 ```
 $ composer require google/analytics-data
 ```
