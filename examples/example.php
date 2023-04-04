@@ -1,5 +1,7 @@
 <?php
-require dirname(__DIR__).'/gabot/autoload.php';
+
+require '../vendor/autoload.php'; // Composer Autoload
+require '../gabot/autoload.php'; // Gabot Autoload
 
 use Gabot\Gabot;
 use Gabot\Model\Query;

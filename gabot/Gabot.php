@@ -1,9 +1,6 @@
 <?php
 namespace Gabot;
 
-require __DIR__.'/vendor/autoload.php';
-require __DIR__.'/autoload.php';
-
 use Gabot\Client;
 use Gabot\Builder\ReportBuilder;
 use Gabot\Builder\RequestBuilder;
