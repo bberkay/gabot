@@ -11,7 +11,6 @@ Run this command with cmd in `'gabot'` folder(don't forget to install [composer]
 ```
 $ composer require google/analytics-data
 ```
-then you have to add `'credentials.json'` file to same `'gabot'` folder, it should look like [this](https://drive.google.com/file/d/1NkY0svMSIVNp2HvixyJbHd-tZjiCr0XV/view?usp=sharing). `setAuth` function also have `$credentials_path` parameter for optional path. https://github.com/bberkay/gabot/blob/e654834ac0d8a4bd6191ccf1988a5ace151dcc49/src/Client.php#L21
 ## How to Use?
 * Setup
 ```php
@@ -21,7 +20,7 @@ use Gabot\Gabot;
 use Gabot\Model\Query;
 
 $gabot = Gabot::getInstance();
-$gabot->setAuth("GA4-PROPERTY-ID");
+$gabot->setAuth("GA4 Property ID", "credentials.json path");
 ```
 * Non-realtime Example
 ```php
