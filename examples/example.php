@@ -8,7 +8,7 @@ use Gabot\Model\Query;
 
 // Gabot Non-realtime Example
 $gabot = Gabot::getInstance();
-$gabot->setAuth("GA4-PROPERTY-ID");
+$gabot->setAuth("GA4 Propery ID", "credentials.json path");
 $gabot->addRequest([ // Non-realtime request get array<Query>
     new Query(
         // non-realtime query must take date ranges for more https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
