@@ -9,7 +9,7 @@ use Gabot\Model\Query;
 // Gabot Non-realtime Example
 $gabot = Gabot::getInstance();
 $gabot->setAuth("GA4-PROPERTY-ID");
-$gabot->addRequest([ // Non-realtime request get array<Query>
+$gabot->setRequest([ // Non-realtime request get array<Query>
     new Query(
         // non-realtime query must take date ranges for more https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
         date_ranges:["start_date" => "28daysAgo", "end_date" => "today"],
@@ -38,8 +38,7 @@ fclose($output_file);
 
 // Gabot Realtime Example
 $gabot->setRealtime(); 
-$gabot->cleanRequest(); // Realtime request and non-realtime request is different from each other so you must clean before set requests
-$gabot->addRequest( // Realtime request get object[Query]
+$gabot->setRequest( // Realtime request get object[Query]
    new Query(
         // realtime query doesn't get date ranges for more https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema
         dimensions:["country", "city"], 
@@ -55,8 +54,7 @@ fclose($output_file);
 
 // getReports with unnamed_list=true
 $gabot->unsetRealtime(); 
-$gabot->cleanRequest();
-$gabot->addRequest([ // Non-realtime request get array<Query>
+$gabot->setRequest([ // Non-realtime request get array<Query>
     new Query(
         date_ranges:["start_date" => "28daysAgo", "end_date" => "today"],
         dimensions:["country", "city"], 

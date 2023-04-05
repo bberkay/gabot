@@ -35,6 +35,7 @@ class Gabot extends Client
      */
     public function setRealtime() : void
     {
+        $this->cleanRequest();
         $this->realtime = true;
     }
 
@@ -45,6 +46,7 @@ class Gabot extends Client
      */
     public function unSetRealtime() : void
     {
+        $this->cleanRequest();
         $this->realtime = false;
     }
 
