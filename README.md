@@ -6,22 +6,23 @@
 * Google Analytics 4 and Google Cloud Console Accounts
 * [credentials.json](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#step_1_enable_the_api)(this json file has contains keys like `type`, `project_id`, `private_key_id`).
 * [GA4 Property ID](https://support.google.com/analytics/answer/12270356?hl=en#:~:text=A%20Measurement%20ID%20is%20an,same%20as%20your%20destination%20ID.)
+* (New tutorial will come).
 
 Run this command with cmd in `'gabot'` folder(don't forget to install [composer](https://getcomposer.org/Composer-Setup.exe))
 ```
 $ composer require google/analytics-data
 ```
-then you have to add `'credentials.json'` file to same `'gabot'` folder, it should look like [this](https://drive.google.com/file/d/1NkY0svMSIVNp2HvixyJbHd-tZjiCr0XV/view?usp=sharing). `setAuth` function also have `$credentials_path` parameter for optional path. https://github.com/bberkay/gabot/blob/e654834ac0d8a4bd6191ccf1988a5ace151dcc49/src/Client.php#L21
 ## How to Use?
 * Setup
 ```php
-require dirname(__DIR__).'/gabot/autoload.php';
+require '../vendor/autoload.php'; // Composer Autoload
+require '../gabot/autoload.php'; // Gabot Autoload
 
 use Gabot\Gabot;
 use Gabot\Model\Query;
 
 $gabot = Gabot::getInstance();
-$gabot->setAuth("GA4-PROPERTY-ID");
+$gabot->setAuth("GA4 Property ID", "credentials.json path");
 ```
 * Non-realtime Example
 ```php
