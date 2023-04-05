@@ -6,7 +6,7 @@
 * Google Analytics 4 and Google Cloud Console Accounts
 * [credentials.json](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#step_1_enable_the_api)(this json file has contains keys like `type`, `project_id`, `private_key_id`).
 * [GA4 Property ID](https://support.google.com/analytics/answer/12270356?hl=en#:~:text=A%20Measurement%20ID%20is%20an,same%20as%20your%20destination%20ID.)
-New tutorial will come.
+* (New tutorial will come).
 
 Run this command with cmd in `'gabot'` folder(don't forget to install [composer](https://getcomposer.org/Composer-Setup.exe))
 ```
