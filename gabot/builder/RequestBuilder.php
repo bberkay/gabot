@@ -21,7 +21,7 @@ trait RequestBuilder{
      * @param array $queries : Queries for request
      * @return void
      */
-    public function addRequest(array|Query $query) : void
+    public function setRequest(array|Query $query) : void
     {
 
         if($this->realtime){
