@@ -28,3 +28,4 @@ class Client{
         $this->request["property"] = $this->property;
     }
 }
+?>
