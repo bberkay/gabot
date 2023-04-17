@@ -5,19 +5,11 @@ use Google\Analytics\Data\V1beta\BatchRunReportsResponse;
 use Google\Analytics\Data\V1beta\RunReportResponse;
 use Google\Analytics\Data\V1beta\RunRealtimeReportResponse;
 
-enum HEADERTYPE: string
-{
-    case DIMENSIONS = "dimensionHeaders";
-    case METRICS = "metricHeaders";
-}
-
-trait ReportBuilder{
+class ReportBuilder{
 
     /**
      * Set Query Title using Headers
      * @example country_city_active1DayUsers_active28DayUsers
-     * @param array $report_headers
-     * @return string
      */
     private static function setQueryTitle(array $report_headers) : string
     {
@@ -34,8 +26,6 @@ trait ReportBuilder{
     /**
      * Get Dimensions and Metrics Headers
      * @example ["country", "city", "active1DayUsers", ...]
-     * @param RunReportResponse|RunRealtimeReportResponse $report
-     * @return array
      */
     private static function getQueryHeaders(RunReportResponse|RunRealtimeReportResponse $report) : array
     {
@@ -52,11 +42,8 @@ trait ReportBuilder{
     /**
      * Get Dimensions and Metrics Values
      * @example ["country" => "Turkey", "city" => "Istanbul", "active1DayUsers" => "1"]
-     * @param RunReportResponse|RunRealtimeReportResponse $report
-     * @param boolean $unnamed_list
-     * @return array
      */
-    private static function getRows(RunReportResponse|RunRealtimeReportResponse $report, bool $unnamed_list) : array
+    private static function getRows(RunReportResponse|RunRealtimeReportResponse $report) : array
     {
         $result = [];
         $query_counter = 0;
@@ -67,18 +54,12 @@ trait ReportBuilder{
             $header_counter = 0;
             // Dimensions
             foreach($row->getDimensionValues() as $val){
-                if($unnamed_list == false)
-                    $result[$query_title][$query_counter][$query_headers[$header_counter]] = $val->getValue();
-                else
-                    $result[$query_title][$query_counter][$header_counter] = $val->getValue();
+                $result[$query_title][$query_counter][$query_headers[$header_counter]] = $val->getValue();
                 $header_counter++;
             }
             // Metrics
-            foreach($row->getMetricValues() as $val){  
-                if($unnamed_list == false)          
-                    $result[$query_title][$query_counter][$query_headers[$header_counter]] = $val->getValue();
-                else
-                    $result[$query_title][$query_counter][$header_counter] = $val->getValue();
+            foreach($row->getMetricValues() as $val){       
+                $result[$query_title][$query_counter][$query_headers[$header_counter]] = $val->getValue();
                 $header_counter++;
             }
             $query_counter++;
@@ -89,21 +70,19 @@ trait ReportBuilder{
 
     /**
      * Get Reports
+     * @params ({RunRealtimeReportResponse|BatchRunReportsResponse}) $response
      * @example ["country_city_active1DayUsers_active28DayUsers" => [{"country":"turkey", "city":"istanbul", "active1DayUsers":"1"}, {...}]]
-     * @param BatchRunReportsResponse|RunRealtimeReportResponse $response
-     * @param bool $unnamed_list {"country":"turkey", "city":"istanbul", "active1DayUsers":"1"} -> ["turkey", "istanbul", "1"]
-     * @return array
      */
-    public function getReports(bool $unnamed_list = false) : array
+    public function getReports(BatchRunReportsResponse|RunRealtimeReportResponse $response) : array
     {
         $result = [];
-        if(get_class($this->response) === get_class(new BatchRunReportsResponse())){
-            foreach($this->response->getReports() as $report){
-                $result[] = self::getRows($report, $unnamed_list);
+        if(get_class($response) === get_class(new BatchRunReportsResponse())){
+            foreach($response->getReports() as $report){
+                $result[] = self::getRows($report);
             }
         }
         else{
-            $result = self::getRows($this->response, $unnamed_list);
+            $result = self::getRows($response);
         }
         return $result;
     }

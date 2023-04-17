@@ -4,42 +4,39 @@ namespace Gabot\Builder;
 use Gabot\Model\Query;
 use Gabot\Builder\QueryBuilder;
 
-trait RequestBuilder{
-
+class RequestBuilder{
     /**
-     * Clean Request
-     * @return void
+     * Set Realtime Request
      */
-    public function cleanRequest() : void
+    public function setRealtimeRequest(Query $query, string $property_id) : array
     {
-        $this->request = [];
-        $this->request["property"] = $this->property;
+
+        $request["property"] = $property_id;
+        if(is_array($query))
+            throw new \Exception("Realtime requests must be Query not array");
+        print_r(array_keys(QueryBuilder::createQuery($query)));
+        return array_merge($request, QueryBuilder::createQuery($query));
     }
 
     /**
+     * Set Non-realtime Request
      * @example [new Query(), new Query(), ...]
-     * @param array $queries : Queries for request
-     * @return void
      */
-    public function setRequest(array|Query $query) : void
+    public function setRequest(array $query, string $property_id) : array
     {
 
-        if($this->realtime){
-            if(is_array($query))
-                throw new \Exception("Realtime requests must be Query not array");
-            $this->request = array_merge($this->request, QueryBuilder::createQuery($query));
-        }   
-        else{
-            if(!is_array($query))
-                throw new \Exception("Non-realtime requests must be array");
-            if(count($query) > 5)
-                throw new \Exception("Up to 5 queries can be run simultaneously.");
-            foreach($query as $query_item){
-                if($query_item->getDateRanges() == [])
-                    throw new \Exception("Non-realtime requests must contain date ranges");
-                $this->request["requests"][] = QueryBuilder::createQuery($query_item);
-            }
+        $request["property"] = $property_id;
+        if(!is_array($query))
+            throw new \Exception("Non-realtime requests must be array");
+        if(count($query) > 5)
+            throw new \Exception("Up to 5 queries can be run simultaneously.");
+        foreach($query as $query_item){
+            if($query_item->getDateRanges() == [])
+                throw new \Exception("Non-realtime requests must contain date ranges");
+            $request["requests"][] = QueryBuilder::createQuery($query_item);
         }
+
+        return $request;
     }
 
 }

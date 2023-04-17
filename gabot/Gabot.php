@@ -4,65 +4,75 @@ namespace Gabot;
 use Gabot\Client;
 use Gabot\Builder\ReportBuilder;
 use Gabot\Builder\RequestBuilder;
+use Gabot\Model\Query;
 
 class Gabot extends Client
 {
-    use ReportBuilder;
-    use RequestBuilder;
     private static $instance = null;
+    private $request_builder;
+    private $report_builder;
 
     // Constructor
-    private function __construct()
+    private function __construct(string $property_id, string $credentials_path)
     {
-        Client::__construct();
+        Client::__construct($property_id, $credentials_path);
+        $this->request_builder = new RequestBuilder();
+        $this->report_builder = new ReportBuilder();
     }
 
     /**
-     * @return Gabot
+     * Singleton instance
      */
-    public static function getInstance() : Gabot
+    public static function getInstance(string $property_id, string $credentials_path) : Gabot
     {
-        // Singleton instance
         if (self::$instance == null) {
-            self::$instance = new Gabot();
+            self::$instance = new Gabot($property_id, $credentials_path);
         }
         return self::$instance;
     }
 
     /**
-     * Set Gabot to realtime analytics
-     * @return void
+     * Set Request
      */
-    public function setRealtime() : void
+    public function setRequest(array $query): array
     {
-        $this->cleanRequest();
-        $this->realtime = true;
+        if(is_array($query)){
+            $this->realtime = false;
+            return $this->request_builder->setRequest($query, $this->property);
+        }
+        else{
+            throw new \Exception("Query must be an array");
+        }
     }
-
 
     /**
-     * Unset Gabot to realtime analytics
-     * @return void
+     * Set Realtime Request
      */
-    public function unSetRealtime() : void
+    public function setRealtimeRequest(Query $query): array
     {
-        $this->cleanRequest();
-        $this->realtime = false;
+        if(is_array($query)){
+            throw new \Exception("Query must be an object<Query>");
+        }
+        else{
+            $this->realtime = true;
+            return $this->request_builder->setRealtimeRequest($query, $this->property);
+        }
     }
-
 
     /**
-     * Google Analytics 4 Response
-     * @return this
+     * Run requests
      */
-    public function makeApiCall()                     
+    public function runRequest(array $request): array
     {
-        if($this->realtime)
-            $this->response = $this->client->runRealtimeReport($this->request);          
-        else
-            $this->response = $this->client->batchRunReports($this->request);   
-        return $this;
+        return $this->report_builder->getReports($this->client->batchRunReports($this->setRequest($request)));
     }
 
+     /**
+     * Run Realtime requests
+     */
+    public function runRealtimeRequest(Query $request): array
+    {
+        return $this->report_builder->getReports($this->client->runRealtimeReport($this->setRealtimeRequest($request)));
+    }
 
 }
