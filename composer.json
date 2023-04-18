@@ -3,7 +3,7 @@
     "description": "Google Analytics 4 Bot with PHP",
     "type": "library",
     "require": {
-        "google/analytics-data": "dev-master"
+        "google/analytics-data": "^0.9.4"
     },
     "license": "MIT",
     "autoload": {
@@ -17,5 +17,5 @@
             "email": "bberkaykaya0@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
