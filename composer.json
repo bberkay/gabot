@@ -1,0 +1,21 @@
+{
+    "name": "bberkay/gabot",
+    "description": "Google Analytics 4 Bot with PHP",
+    "type": "library",
+    "require": {
+        "google/analytics-data": "dev-master"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bberkay\\Gabot\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Berkay Kaya",
+            "email": "bberkaykaya0@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
