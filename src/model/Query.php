@@ -1,5 +1,5 @@
 <?php
-namespace Gabot\Model;
+namespace Bberkay\Gabot\Model;
 
 class Query{
     private array $date_ranges;

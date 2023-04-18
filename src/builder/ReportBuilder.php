@@ -1,5 +1,5 @@
 <?php
-namespace Gabot\Builder;
+namespace Bberkay\Gabot\Builder;
 
 use Google\Analytics\Data\V1beta\BatchRunReportsResponse;
 use Google\Analytics\Data\V1beta\RunReportResponse;

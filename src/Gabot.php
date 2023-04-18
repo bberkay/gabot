@@ -1,10 +1,10 @@
 <?php
-namespace Gabot;
+namespace Bberkay\Gabot;
 
-use Gabot\Client;
-use Gabot\Builder\ReportBuilder;
-use Gabot\Builder\RequestBuilder;
-use Gabot\Model\Query;
+use Bberkay\Gabot\Client;
+use Bberkay\Gabot\Builder\ReportBuilder;
+use Bberkay\Gabot\Builder\RequestBuilder;
+use Bberkay\Gabot\Model\Query;
 
 class Gabot extends Client
 {

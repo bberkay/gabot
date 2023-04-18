@@ -1,7 +1,7 @@
 <?php
 
-namespace Gabot\Builder;
-use Gabot\Model\Query;
+namespace Bberkay\Gabot\Builder;
+use Bberkay\Gabot\Model\Query;
 use Google\Analytics\Data\V1beta\DateRange;
 use Google\Analytics\Data\V1beta\Metric;
 use Google\Analytics\Data\V1beta\Dimension;
