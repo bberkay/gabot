@@ -22,19 +22,10 @@ $credentials_path = "./credentials.json path";
 $gabot = Gabot::getInstance($property_id, $credentials_path);
 ```
 ```php
-print_r($gabot->getActiveUsersByDevice());
 print_r($gabot->getActiveUsersByOS());
 ```
 ```json
 [
-    {
-       "deviceCategory":[
-          {
-             "desktop":"5",
-             "mobile":"3",
-          },
-       ]
-    },
     {
        "operatingSystem":[
           {
