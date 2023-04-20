@@ -8,7 +8,7 @@
 
 Download with [composer](https://getcomposer.org/Composer-Setup.exe)
 ```
-$ composer require gabot/gabot:dev-master@dev
+composer require gabot/gabot:dev-master@dev
 ```
 ## How to Use?
 * Setup
