@@ -1,5 +1,5 @@
 <?php
-namespace Bberkay\Gabot;
+namespace Gabot;
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 
 class Client{

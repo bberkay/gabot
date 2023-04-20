@@ -1,10 +1,10 @@
 <?php
-namespace Bberkay\Gabot;
+namespace Gabot;
 
-use Bberkay\Gabot\Client;
-use Bberkay\Gabot\Builder\ReportBuilder;
-use Bberkay\Gabot\Builder\RequestBuilder;
-use Bberkay\Gabot\Model\Query;
+use Gabot\Client;
+use Gabot\Builder\ReportBuilder;
+use Gabot\Builder\RequestBuilder;
+use Gabot\Model\Query;
 
 class Gabot extends Client
 {
@@ -79,10 +79,8 @@ class Gabot extends Client
 
     /**
      * Get active users by device
-     * @param string $activity_limit "activeUsers", "active1dayUsers", "active7dayUsers", "active28dayUsers"
-     * @link for more info: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function getActiveUsersByDevice(string $start_date = "28daysAgo", string $end_date = "today", string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByDevice(string $start_date, string $end_date, string $activity_limit): array
     {
         return $this->runRequest([
             new Query(
@@ -95,10 +93,8 @@ class Gabot extends Client
 
     /**
      * Get active users by os
-     * @param string $activity_limit "activeUsers", "active1dayUsers", "active7dayUsers", "active28dayUsers"
-     * @link for more info: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function getActiveUsersByOS(string $start_date = "28daysAgo", string $end_date = "today", string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByOS(string $start_date, string $end_date, string $activity_limit): array
     {
         return $this->runRequest([
             new Query(
@@ -111,10 +107,8 @@ class Gabot extends Client
 
     /**
      * Get active users by browser
-     * @param string $activity_limit "activeUsers", "active1dayUsers", "active7dayUsers", "active28dayUsers"
-     * @link for more info: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function getActiveUsersByBrowser(string $start_date = "28daysAgo", string $end_date = "today", string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByBrowser(string $start_date, string $end_date, string $activity_limit): array
     {
         return $this->runRequest([
             new Query(
@@ -127,10 +121,8 @@ class Gabot extends Client
 
     /**
      * Get active users by city
-     * @param string $activity_limit "activeUsers", "active1dayUsers", "active7dayUsers", "active28dayUsers"
-     * @link for more info: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function getActiveUsersByCity(string $start_date = "28daysAgo", string $end_date = "today", string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByCity(string $start_date, string $end_date, string $activity_limit): array
     {
         return $this->runRequest([
             new Query(
@@ -143,10 +135,8 @@ class Gabot extends Client
 
     /**
      * Get active users by country
-     * @param string $activity_limit "activeUsers", "active1dayUsers", "active7dayUsers", "active28dayUsers"
-     * @link for more info: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function getActiveUsersByCountry(string $start_date = "28daysAgo", string $end_date = "today", string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByCountry(string $start_date, string $end_date, string $activity_limit): array
     {
         return $this->runRequest([
             new Query(
@@ -159,10 +149,8 @@ class Gabot extends Client
 
     /**
      * Get active users by country and city
-     * @param string $activity_limit "activeUsers", "active1dayUsers", "active7dayUsers", "active28dayUsers"
-     * @link for more info: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function getActiveUsersByCountryAndCity(string $start_date = "28daysAgo", string $end_date = "today", string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByCountryAndCity(string $start_date, string $end_date, string $activity_limit): array
     {
         return $this->runRequest([
             new Query(

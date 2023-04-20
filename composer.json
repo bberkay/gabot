@@ -1,5 +1,5 @@
 {
-    "name": "bberkay/gabot",
+    "name": "gabot/gabot",
     "description": "Google Analytics 4 Bot with PHP",
     "type": "library",
     "require": {
@@ -8,7 +8,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Bberkay\\Gabot\\": "src/"
+            "Gabot\\": "src/"
         }
     },
     "authors": [

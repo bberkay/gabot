@@ -1,5 +1,5 @@
 <?php
-namespace Bberkay\Gabot\Builder;
+namespace Gabot\Builder;
 
 use Gabot\Model\Query;
 use Gabot\Builder\QueryBuilder;
