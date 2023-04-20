@@ -16,6 +16,7 @@ $ composer require gabot/gabot:dev-master@dev
 require __DIR__.'/vendor/autoload.php'; // Composer Autoload
 
 use Gabot\Gabot;
+
 $property_id = "GA4 Property ID";
 $credentials_path = "./credentials.json path";
 $gabot = Gabot::getInstance($property_id, $credentials_path);
