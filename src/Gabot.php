@@ -79,6 +79,7 @@ class Gabot extends Client
 
     /**
      * Get active users by device
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
     public function getActiveUsersByDevice(string $start_date, string $end_date, string $activity_limit): array
     {
@@ -93,6 +94,7 @@ class Gabot extends Client
 
     /**
      * Get active users by os
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
     public function getActiveUsersByOS(string $start_date, string $end_date, string $activity_limit): array
     {
@@ -107,6 +109,7 @@ class Gabot extends Client
 
     /**
      * Get active users by browser
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
     public function getActiveUsersByBrowser(string $start_date, string $end_date, string $activity_limit): array
     {
@@ -121,6 +124,7 @@ class Gabot extends Client
 
     /**
      * Get active users by city
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
     public function getActiveUsersByCity(string $start_date, string $end_date, string $activity_limit): array
     {
@@ -135,6 +139,7 @@ class Gabot extends Client
 
     /**
      * Get active users by country
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
     public function getActiveUsersByCountry(string $start_date, string $end_date, string $activity_limit): array
     {
@@ -149,6 +154,7 @@ class Gabot extends Client
 
     /**
      * Get active users by country and city
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
     public function getActiveUsersByCountryAndCity(string $start_date, string $end_date, string $activity_limit): array
     {
@@ -159,5 +165,42 @@ class Gabot extends Client
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
         ]);
+    }
+
+    /**
+     * Get custom report
+     * @link https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
+     */
+    public function getCustomReport(array $metrics = null, array $dimensions = null, array $date_ranges): array
+    {
+        if($metrics == null && $dimensions == null){
+            throw new \Exception("Metrics and dimensions can't be null at the same time");
+        }
+
+        return $this->runRequest([
+            new Query(
+                metrics: $metrics,
+                dimensions: $dimensions,
+                date_ranges: $date_ranges
+            )
+        ]);
+    }
+
+    /**
+     * Get realtime custom report
+     * @link https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema
+     */
+    public function getRealtimeCustomReport(array $metrics = null, array $dimensions = null): array
+    {
+        if($metrics == null && $dimensions == null){
+            throw new \Exception("Metrics and dimensions can't be null at the same time");
+        }
+
+        return $this->runRealtimeRequest(
+            new Query(
+                metrics: $metrics,
+                dimensions: $dimensions,
+            )
+        );
     }
 }
