@@ -61,6 +61,7 @@ class Gabot extends Client
 
     /**
      * Run requests
+     * @param Array<Query>
      * @link for more info about create request: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
     public function runRequest(array $request): array
