@@ -21,7 +21,7 @@ $property_id = "GA4 Property ID";
 $credentials_path = "./credentials.json path";
 $gabot = Gabot::getInstance($property_id, $credentials_path);
 ```
-* Ready-made reports
+* Ready-made Reports
 ```php
 print_r($gabot->getActiveUsersByOS());
 ```
