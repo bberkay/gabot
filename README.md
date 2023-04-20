@@ -56,6 +56,7 @@ $gabot->getCustomReport(
     ]
  }
 ```
+* Realtime Reports
 ```php
 $gabot->getRealtimeCustomReport(
    dimensions:["city"],
@@ -74,6 +75,24 @@ $gabot->getRealtimeCustomReport(
  }
 ]
 ```
-
+* Multiple Report
+```php
+$gabot->getRealtimeCustomReport(
+   dimensions:["city"],
+   metrics:["activeUsers"]
+);
+```
+```json
+[
+    {
+    "city":[
+       {
+          "Istanbul":"5",
+          "Paris":"3",
+       }
+    ]
+ }
+]
+```
 
 
