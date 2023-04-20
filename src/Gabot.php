@@ -171,7 +171,7 @@ class Gabot extends Client
      * Get custom report
      * @link https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema
      */
-    public function getCustomReport(array $metrics = null, array $dimensions = null, array $date_ranges): array
+    public function getCustomReport(array $metrics = null, array $dimensions = null, string $start_date, string $end_date): array
     {
         if($metrics == null && $dimensions == null){
             throw new \Exception("Metrics and dimensions can't be null at the same time");
@@ -181,7 +181,7 @@ class Gabot extends Client
             new Query(
                 metrics: $metrics,
                 dimensions: $dimensions,
-                date_ranges: $date_ranges
+                date_ranges: ["start_date" => $start_date, "end_date" =>  $end_date]
             )
         ]);
     }
