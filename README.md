@@ -24,7 +24,7 @@ $gabot = Gabot::getInstance($property_id, $credentials_path);
 ```
 * Ready-made Reports
 ```php
-print_r($gabot->getActiveUsersByOS());
+print_r($gabot->getActiveUsersByOS("28daysAgo", "today"));
 ```
 ```json
 [
