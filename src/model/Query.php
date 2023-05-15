@@ -25,10 +25,10 @@ class Query{
     }
 
     // GETTERS 
-    public function getDateRanges() { return $this->date_ranges; }
-    public function getDimensions() { return $this->dimensions; }
-    public function getMetrics() { return $this->metrics; }
-    public function getKeepEmptyRow() { return $this->keep_empty_row; }
+    public function getDateRanges():array { return $this->date_ranges; }
+    public function getDimensions():array { return $this->dimensions; }
+    public function getMetrics():array { return $this->metrics; }
+    public function getKeepEmptyRow():bool { return $this->keep_empty_row; }
 }
 
 ?>

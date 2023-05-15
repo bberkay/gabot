@@ -5,6 +5,7 @@ use Gabot\Client;
 use Gabot\Builder\ReportBuilder;
 use Gabot\Builder\RequestBuilder;
 use Gabot\Model\Query;
+use Gabot\Model\Report;
 
 class Gabot extends Client
 {
@@ -64,25 +65,25 @@ class Gabot extends Client
      * @param Array<Query>
      * @link for more info about create request: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function runRequest(array $request): array
+    public function runRequest(array $request): Report
     {
-        return $this->report_builder->getReports($this->client->batchRunReports($this->setRequest($request)));
+        return new Report($this->report_builder->getReports($this->client->batchRunReports($this->setRequest($request))));
     }
 
     /**
      * Run Realtime requests
      * @link for more info about create request: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
      */
-    public function runRealtimeRequest(Query $request): array
+    public function runRealtimeRequest(Query $request): Report
     {
-        return $this->report_builder->getReports($this->client->runRealtimeReport($this->setRealtimeRequest($request)));
+        return new Report($this->report_builder->getReports($this->client->runRealtimeReport($this->setRealtimeRequest($request))));
     }
 
     /**
      * Get active users by device
      * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByDevice(string $start_date, string $end_date, string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByDevice(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
@@ -97,7 +98,7 @@ class Gabot extends Client
      * Get active users by os
      * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByOS(string $start_date, string $end_date, string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByOS(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
@@ -112,7 +113,7 @@ class Gabot extends Client
      * Get active users by browser
      * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByBrowser(string $start_date, string $end_date, string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByBrowser(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
@@ -127,7 +128,7 @@ class Gabot extends Client
      * Get active users by city
      * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByCity(string $start_date, string $end_date, string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByCity(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
@@ -142,7 +143,7 @@ class Gabot extends Client
      * Get active users by country
      * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByCountry(string $start_date, string $end_date, string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByCountry(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
@@ -157,7 +158,7 @@ class Gabot extends Client
      * Get active users by country and city
      * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByCountryAndCity(string $start_date, string $end_date, string $activity_limit = "activeUsers"): array
+    public function getActiveUsersByCountryAndCity(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
