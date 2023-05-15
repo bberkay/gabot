@@ -146,8 +146,8 @@ print_r($gabot->runRealtimeRequest(
     }
 ]
 ```
-# Source Code
-```php
+### Source Code
+```html
 <html>
     <head>
         <title>Gabot Example File - Source Code</title>
@@ -160,9 +160,8 @@ print_r($gabot->runRealtimeRequest(
         
         <!-- Chart.js Library --->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
         <?php 
-        // Setuğ
+        // Setup
         require __DIR__.'/vendor/autoload.php'; // Composer Autoload
 
         use Gabot\Gabot;
