@@ -11,8 +11,8 @@ Download with [composer](https://getcomposer.org/Composer-Setup.exe)
 ```
 composer require gabot/gabot:dev-master@dev
 ```
-## How to Use?
-* Setup
+# How to Use?
+## Setup
 ```php
 require __DIR__.'/vendor/autoload.php'; // Composer Autoload
 
@@ -24,7 +24,8 @@ $property_id = "GA4 Property ID";
 $credentials_path = "./credentials.json path";
 $gabot = Gabot::getInstance($property_id, $credentials_path);
 ```
-* Ready-made Reports
+## Ready-made Reports
+### Get
 ```php
 $reports = $gabot->getActiveUsersByOS("28daysAgo", "today");
 print_r($reports->get());
@@ -45,7 +46,7 @@ print_r($reports->get());
     }
  ]
 ```
-* Visualize
+### Visualize
 ```html
 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 
@@ -59,7 +60,8 @@ $reports->visualize(new Chart(
     chart_type:"bar"
 ));
 ```
-* Custom Reports
+## Custom Reports
+### Get
 ```php
 $reports = $gabot->runRequest([
     new Query(
@@ -96,7 +98,7 @@ print_r($reports->get());
     }
 ]
 ```
-* Visualize
+### Visualize
 ```html
 <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
 <canvas id="myChart3" style="width:100%;max-width:700px"></canvas>
@@ -121,7 +123,8 @@ $result->visualize([
     )
 ]);
 ```
-* Realtime Reports
+## Realtime Reports
+### Get
 ```php
 print_r($gabot->runRealtimeRequest(
    new Query(
@@ -146,7 +149,7 @@ print_r($gabot->runRealtimeRequest(
     }
 ]
 ```
-### Source Code
+# Source Code
 ```html
 <html>
     <head>
