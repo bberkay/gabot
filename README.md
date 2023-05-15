@@ -16,6 +16,7 @@ composer require gabot/gabot:dev-master@dev
 require __DIR__.'/vendor/autoload.php'; // Composer Autoload
 
 use Gabot\Gabot;
+use Gabot\Model\Query;
 
 $property_id = "GA4 Property ID";
 $credentials_path = "./credentials.json path";
@@ -23,76 +24,73 @@ $gabot = Gabot::getInstance($property_id, $credentials_path);
 ```
 * Ready-made Reports
 ```php
-print_r($gabot->getActiveUsersByOS());
+print_r($gabot->getActiveUsersByOS("28daysAgo", "today"));
 ```
 ```json
 [
     {
-       "operatingSystem":[
+       "operatingSystem_activeUsers":[
           {
-             "windows":"14",
-             "android":"5"
-          }
+            "operatingSystem":"iOS",
+            "activeUsers":"4"
+          },
+          {
+            "operatingSystem":"Windows",
+            "activeUsers":"3"
+          },
        ]
     }
  ]
 ```
 * Custom Reports
 ```php
-$gabot->getCustomReport(
-   dimension:["browser"],
-   metrics:["activeUsers"],
-   start_date:"28daysAgo",
-   end_date:"today"
-);
+$gabot->runRequest([
+    new Query(
+        date_ranges:["start_date" => "28daysAgo", "end_date" => "today"],
+        dimensions:["browser"],
+        metrics:["activeUsers"]
+    ), 
+    // more query can be added.
+]);
 ```
 ```json
-{
-    "browser":[
-       {
-          "chrome":"5",
-          "safari":"3",
-       }
-    ]
- }
+[
+    {
+       "browser_activeUsers":[
+          {
+            "browser":"Chrome",
+            "activeUsers":"4"
+          },
+          {
+            "browser":"Safari",
+            "activeUsers":"3"
+          },
+       ]
+    }
+]
 ```
 * Realtime Reports
 ```php
-$gabot->getRealtimeCustomReport(
-   dimensions:["city"],
-   metrics:["activeUsers"]
+$gabot->runRealtimeRequest(
+   new Query(
+        dimensions:["browser"],
+        metrics:["activeUsers"]
+    )
 );
 ```
 ```json
 [
     {
-    "city":[
-       {
-          "Istanbul":"5",
-          "Paris":"3",
-       }
-    ]
- }
+       "browser_activeUsers":[
+          {
+            "browser":"Chrome",
+            "activeUsers":"4"
+          },
+          {
+            "browser":"Safari",
+            "activeUsers":"3"
+          },
+       ]
+    }
 ]
 ```
-* Multiple Report
-```php
-$gabot->getRealtimeCustomReport(
-   dimensions:["city"],
-   metrics:["activeUsers"]
-);
-```
-```json
-[
-    {
-    "city":[
-       {
-          "Istanbul":"5",
-          "Paris":"3",
-       }
-    ]
- }
-]
-```
-
-
