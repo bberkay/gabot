@@ -183,11 +183,15 @@ print_r($gabot->runRealtimeRequest(
         $reports = $gabot->getActiveUsersByOS("28daysAgo", "today");
         print_r($reports->get());
            
-        $reports->visualize(new Chart(
+        // Default chart settings
+        $reports->visualize(new Chart(chart_id:"myChart"));
+
+        // With custom chart settings
+        /*$reports->visualize(new Chart(
             chart_id:"myChart", 
             chart_options:'{scales: { yAxes: [{ ticks: { beginAtZero: true } }] }, legend: {display:false}}', 
             chart_type:"bar"
-        ));
+        ));*/
         
         // Custom Reports
         $result = $gabot->runRequest([
