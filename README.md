@@ -36,18 +36,23 @@ print_r($reports->get());
        "operatingSystem_activeUsers":[
           {
             "operatingSystem":"iOS",
-            "activeUsers":"4"
+            "activeUsers":"2"
           },
           {
             "operatingSystem":"Windows",
-            "activeUsers":"3"
+            "activeUsers":"4"
           },
+          {
+            "operatingSystem":"Linux",
+            "activeUsers":"1"
+          }
        ]
     }
  ]
 ```
 ### Visualize
 ```html
+<h4>myChart - operatingSystem_activeUsers</h4>
 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 
 <!-- Chart.js Library -->
@@ -92,23 +97,23 @@ print_r($reports->get());
        "browser_activeUsers":[
           {
             "browser":"Chrome",
-            "activeUsers":"4"
+            "activeUsers":"6"
           },
           {
-            "browser":"Safari",
-            "activeUsers":"3"
+            "browser":"Edge",
+            "activeUsers":"1"
           },
        ]
     },
     {
        "deviceCategory_activeUsers":[
           {
-            "deviceCategory":"Mobile",
+            "deviceCategory":"Desktop",
             "activeUsers":"5"
           },
           {
-            "deviceCategory":"Desktop",
-            "activeUsers":"10"
+            "deviceCategory":"Mobile",
+            "activeUsers":"2"
           },
        ]
     },
@@ -116,11 +121,15 @@ print_r($reports->get());
        "operatingSystem_activeUsers":[
           {
             "browser":"Windows",
-            "activeUsers":"3"
+            "activeUsers":"4"
+          },
+          {
+            "browser":"iOS",
+            "activeUsers":"2"
           },
           {
             "browser":"Linux",
-            "activeUsers":"8"
+            "activeUsers":"1"
           },
        ]
     
@@ -128,8 +137,11 @@ print_r($reports->get());
 ```
 ### Visualize
 ```html
+<h4>myChart2 - browser_activeUsers</h4>
 <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+<h4>myChart3 - deviceCategory_activeUsers</h4>
 <canvas id="myChart3" style="width:100%;max-width:700px"></canvas>
+<h4>myChart4 - operatingSystem_activeUsers</h4>
 <canvas id="myChart4" style="width:100%;max-width:700px"></canvas>
 ```
 ```php
@@ -154,9 +166,9 @@ $result->visualize([
 ## Realtime Reports
 ### Get
 ```php
-print_r($gabot->runRealtimeRequest(
-   new Query(
-        dimensions:["browser"],
+ print_r($gabot->runRealtimeRequest(
+    new Query(
+        dimensions:["country"],
         metrics:["activeUsers"]
     )
 )->get()); // Real-time reports can be visualized like any other.
@@ -164,7 +176,7 @@ print_r($gabot->runRealtimeRequest(
 ```json
 [
     {
-       "browser_activeUsers":[
+       "country_activeUsers":[
           {
             "browser":"Chrome",
             "activeUsers":"4"
@@ -184,9 +196,13 @@ print_r($gabot->runRealtimeRequest(
         <title>Gabot Example File - Source Code</title>
     </head>
     <body>
+	<h4>myChart - operatingSystem_activeUsers</h4>
         <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+	<h4>myChart2 - browser_activeUsers</h4>
         <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+	<h4>myChart3 - deviceCategory_activeUsers</h4>
         <canvas id="myChart3" style="width:100%;max-width:700px"></canvas>
+	<h4>myChart4 - operatingSystem_activeUsers</h4>
         <canvas id="myChart4" style="width:100%;max-width:700px"></canvas>
         
         <!-- Chart.js Library --->
@@ -199,7 +215,7 @@ print_r($gabot->runRealtimeRequest(
         use Gabot\Model\Query;
         use Gabot\Model\Chart; // Optional, for visualize
     
-        $property_id = "GA4-Property-ID";
+        $property_id = "GA4-Propery-ID";
         $credentials_path = "credentials.json";
         $gabot = Gabot::getInstance($property_id, $credentials_path);
         
