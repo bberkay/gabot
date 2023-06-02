@@ -153,7 +153,7 @@ print_r($gabot->runRealtimeRequest(
     }
 ]
 ```
-# Source Code
+# Source Code of Example
 ```html
 <html>
     <head>
