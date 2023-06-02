@@ -69,6 +69,7 @@ $reports->visualize(new Chart(
     chart_type:"bar"
 ));
 ```
+![myChart](https://i.ibb.co/dGCwdzM/myChart.png)
 ## Custom Reports
 ### Get
 ```php
@@ -163,6 +164,7 @@ $result->visualize([
     )
 ]);
 ```
+![myChart2-myChart3-myChart4](https://i.ibb.co/y4SD6B2/my-Chart234.png)
 ## Realtime Reports
 ### Get
 ```php
@@ -197,13 +199,21 @@ $result->visualize([
     </head>
     <body>
 	<h4>myChart - operatingSystem_activeUsers</h4>
-        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+	<div style="display:flex">
+	<div>
 	<h4>myChart2 - browser_activeUsers</h4>
-        <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+        <canvas id="myChart2" style="width:100%;max-width:1000px"></canvas>
+	</div>
+	<div>
 	<h4>myChart3 - deviceCategory_activeUsers</h4>
-        <canvas id="myChart3" style="width:100%;max-width:700px"></canvas>
+        <canvas id="myChart3" style="width:100%;max-width:1000px"></canvas>
+	</div>
+	<div>
 	<h4>myChart4 - operatingSystem_activeUsers</h4>
-        <canvas id="myChart4" style="width:100%;max-width:700px"></canvas>
+        <canvas id="myChart4" style="width:100%;max-width:1000px"></canvas>
+	</div>
+	</div>
         
         <!-- Chart.js Library --->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -215,7 +225,7 @@ $result->visualize([
         use Gabot\Model\Query;
         use Gabot\Model\Chart; // Optional, for visualize
     
-        $property_id = "GA4-Propery-ID";
+        $property_id = "GA4-Property-ID";
         $credentials_path = "credentials.json";
         $gabot = Gabot::getInstance($property_id, $credentials_path);
         
@@ -273,7 +283,7 @@ $result->visualize([
         // Realtime Reports
         print_r($gabot->runRealtimeRequest(
            new Query(
-                dimensions:["browser"],
+                dimensions:["country"],
                 metrics:["activeUsers"]
             )
         )->get()); // Real-time reports can be visualized like any other.
