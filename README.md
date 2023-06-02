@@ -99,7 +99,31 @@ print_r($reports->get());
             "activeUsers":"3"
           },
        ]
-    }
+    },
+    {
+       "deviceCategory_activeUsers":[
+          {
+            "deviceCategory":"Mobile",
+            "activeUsers":"5"
+          },
+          {
+            "deviceCategory":"Desktop",
+            "activeUsers":"10"
+          },
+       ]
+    },
+    {
+       "operatingSystem_activeUsers":[
+          {
+            "browser":"Windows",
+            "activeUsers":"3"
+          },
+          {
+            "browser":"Linux",
+            "activeUsers":"8"
+          },
+       ]
+    
 ]
 ```
 ### Visualize
