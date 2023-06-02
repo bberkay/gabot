@@ -180,11 +180,11 @@ $result->visualize([
     {
        "country_activeUsers":[
           {
-            "browser":"Chrome",
+            "country":"United States",
             "activeUsers":"4"
           },
           {
-            "browser":"Safari",
+            "country":"Turkey",
             "activeUsers":"3"
           },
        ]
