@@ -133,7 +133,7 @@ print_r($reports->get());
             "activeUsers":"1"
           },
        ]
-    
+    }
 ]
 ```
 ### Visualize
