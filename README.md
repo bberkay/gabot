@@ -148,7 +148,7 @@ print_r($reports->get());
 <canvas id="myChart4" style="width:100%;max-width:700px"></canvas>
 ```
 ```php
-$result->visualize([
+$reports->visualize([
     new Chart(
         chart_id:"myChart2", 
         chart_options:'{scales: { yAxes: [{ ticks: { beginAtZero: true } }] }, legend: {display:false}}', 
