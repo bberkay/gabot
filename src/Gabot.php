@@ -168,4 +168,79 @@ class Gabot extends Client
             )
         ]);
     }
+
+    /**
+     * Get active users by page path
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     */
+    public function getActiveUsersByPagePath(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    {
+        return $this->runRequest([
+            new Query(
+                metrics: [$activity_limit],
+                dimensions: ["pagePath"],
+                date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
+            )
+        ]);
+    }
+
+    /**
+     * Get active users by language
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     */
+    public function getActiveUsersByLanguage(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    {
+        return $this->runRequest([
+            new Query(
+                metrics: [$activity_limit],
+                dimensions: ["language"],
+                date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
+            )
+        ]);
+    }
+
+    /**
+     * Get active users by first user source
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     */
+    public function getActiveUsersByFirstUserSource(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    {
+        return $this->runRequest([
+            new Query(
+                metrics: [$activity_limit],
+                dimensions: ["firstUserSource"],
+                date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
+            )
+        ]);
+    }
+
+    /**
+     * Get active users by region
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     */
+    public function getActiveUsersByRegion(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    {
+        return $this->runRequest([
+            new Query(
+                metrics: [$activity_limit],
+                dimensions: ["region"],
+                date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
+            )
+        ]);
+    }
+
+    /**
+     * Get active users by gender
+     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     */
+    public function getActiveUsersByGender(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    {
+        return $this->runRequest([
+            new Query(
+                metrics: [$activity_limit],
+                dimensions: ["userGender"],
+                date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
+            )
+        ]);
+    }
 }
