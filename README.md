@@ -208,7 +208,8 @@ $result->visualize([
 | Get active users by region  | getActiveUsersByRegion() |	
 | Get active users by gender | getActiveUsersByGender() |
 
-For more information, please visit [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en)
+- For more information, please visit [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en)
+- Also you can use [GA4 Query Explorer](https://ga-dev-tools.google/ga4/query-explorer/)
 
 # Source Code of Example
 ```html
