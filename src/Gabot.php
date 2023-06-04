@@ -81,13 +81,13 @@ class Gabot extends Client
 
     /**
      * Get active users by device
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByDevice(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByDevice(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["deviceCategory"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -96,13 +96,13 @@ class Gabot extends Client
 
     /**
      * Get active users by os
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByOS(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByOS(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["operatingSystem"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -111,13 +111,13 @@ class Gabot extends Client
 
     /**
      * Get active users by browser
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByBrowser(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByBrowser(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["browser"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -126,13 +126,13 @@ class Gabot extends Client
 
     /**
      * Get active users by city
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByCity(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByCity(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["city"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -141,13 +141,13 @@ class Gabot extends Client
 
     /**
      * Get active users by country
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByCountry(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByCountry(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["country"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -156,13 +156,13 @@ class Gabot extends Client
 
     /**
      * Get active users by country and city
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByCountryAndCity(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByCountryAndCity(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["country", "city"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -171,13 +171,13 @@ class Gabot extends Client
 
     /**
      * Get active users by page path
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByPagePath(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByPagePath(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["pagePath"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -186,13 +186,13 @@ class Gabot extends Client
 
     /**
      * Get active users by language
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByLanguage(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByLanguage(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["language"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -201,13 +201,13 @@ class Gabot extends Client
 
     /**
      * Get active users by first user source
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByFirstUserSource(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByFirstUserSource(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["firstUserSource"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -216,13 +216,13 @@ class Gabot extends Client
 
     /**
      * Get active users by region
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByRegion(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByRegion(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["region"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
@@ -231,13 +231,13 @@ class Gabot extends Client
 
     /**
      * Get active users by gender
-     * @param {string} activity_limit the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
+     * @param {string} activity the activity limit of the report, default(activeUsers), examples(activeUsers, active1DayUsers, active7DayUsers, active28DayUsers)
      */
-    public function getActiveUsersByGender(string $start_date, string $end_date, string $activity_limit = "activeUsers"): Report
+    public function getActiveUsersByGender(string $start_date, string $end_date, string $activity = "activeUsers"): Report
     {
         return $this->runRequest([
             new Query(
-                metrics: [$activity_limit],
+                metrics: [$activity],
                 dimensions: ["userGender"],
                 date_ranges: ["start_date" => $start_date, "end_date" => $end_date]
             )
