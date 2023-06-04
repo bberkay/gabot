@@ -1,6 +1,8 @@
 # Basic Bot with PHP for Google Analytics 4
 1. [Installation](https://github.com/bberkay/gabot-php#installation)
 2. [How to use?](https://github.com/bberkay/gabot-php#how-to-use)
+3. [Report List](https://github.com/bberkay/gabot-php/tree/master#ready-made-report-list)
+4. [Source Code](https://github.com/bberkay/gabot-php#source-code-of-example)
 ## Installation
 #### What you need?
 * [GA4 Property ID](https://support.google.com/analytics/answer/12270356?hl=en#:~:text=A%20Measurement%20ID%20is%20an,same%20as%20your%20destination%20ID.)
@@ -191,6 +193,9 @@ $result->visualize([
     }
 ]
 ```
+# Ready-made Report List
+// Coming soon
+
 # Source Code of Example
 ```html
 <html>
