@@ -194,7 +194,21 @@ $result->visualize([
 ]
 ```
 # Ready-made Report List
-// Coming soon
+| Title | Report |
+| ------------- | ------------- |
+| Get active users by device  | getActiveUsersByDevice() |
+| Get active users by operating system  | getActiveUsersByOs() |
+| Get active users by browser  | getActiveUsersByBrowser() |
+| Get active users by city  | getActiveUsersByCity() |
+| Get active users by country  | getActiveUsersByCountry() |
+| Get active users by country and city | getActiveUsersByCountryAndCity() |
+| Get active users by page path  | getActiveUsersByPagePath() |
+| Get active users by language  | getActiveUsersByLanguage() |
+| Get active users by first user source  | getActiveUsersByFirstUserSource() |
+| Get active users by region  | getActiveUsersByRegion() |	
+| Get active users by gender | getActiveUsersByGender() |
+
+For more information, please visit [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en)
 
 # Source Code of Example
 ```html
