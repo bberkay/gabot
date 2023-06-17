@@ -211,6 +211,27 @@ $reports->visualize([
 - For more information, please visit [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en)
 - Also you can use [GA4 Query Explorer](https://ga-dev-tools.google/ga4/query-explorer/)
 
+### Add New Report To Gabot
+- You can add this template to the end of the `src/Gabot.php` file, then edit it however you want.
+```php
+/**
+ * Function description
+ * @param {type_of_param} param Parameter description
+ * @returns {Report}
+ */
+public function newReport(string $start_date, string $end_date): Report
+{
+	return $this->runRequest([
+            new Query(
+                metrics: ["activeUsers"], // Metrics: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en#metrics
+                dimensions: ["city"], // Dimensions: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en#dimensions
+                date_ranges: ["start_date" => $start_date, "end_date" => $end_date] // Date Ranges: https://developers.google.com/analytics/devguides/reporting/data/v1/basics?hl=en#report_request
+            )
+        ]);
+}
+```
+- Then you can use this `$gabot->newReport("28daysAgo", "today")->get();` way like any other ready-made report
+
 # Source Code of Example
 ```html
 <html>
