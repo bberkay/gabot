@@ -14,7 +14,7 @@ class Client{
     /**
      * Set authentication for Google Analytics 4
      */
-    public function setAuth(string $property_id, string $credentials_path) : void
+    private function setAuth(string $property_id, string $credentials_path) : void
     {
         putenv("GOOGLE_APPLICATION_CREDENTIALS=$credentials_path");
         $this->property = "properties/" . $property_id;
