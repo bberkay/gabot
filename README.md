@@ -71,7 +71,7 @@ $reports->visualize(new Chart(
     chart_type:"bar"
 ));
 ```
-[myChart](https://i.ibb.co/dGCwdzM/myChart.png)
+![myChart](https://i.ibb.co/dGCwdzM/myChart.png)
 ## Custom Reports
 ### Get
 ```php
