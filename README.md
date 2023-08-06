@@ -1,4 +1,4 @@
-# Basic Bot with PHP for Google Analytics 4
+# Simple Bot with PHP for Google Analytics 4
 1. [Installation](https://github.com/bberkay/gabot-php#installation)
 2. [How to use?](https://github.com/bberkay/gabot-php#how-to-use)
 3. [Report List](https://github.com/bberkay/gabot-php/tree/master#ready-made-report-list)
