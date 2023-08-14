@@ -3,6 +3,9 @@
 2. [How to use?](https://github.com/bberkay/gabot-php#how-to-use)
 3. [Report List](https://github.com/bberkay/gabot-php/tree/master#ready-made-report-list)
 4. [Source Code](https://github.com/bberkay/gabot-php#source-code-of-example)
+
+<br>
+
 ## Installation
 #### What you need?
 * [GA4 Property ID](https://support.google.com/analytics/answer/12270356?hl=en#:~:text=A%20Measurement%20ID%20is%20an,same%20as%20your%20destination%20ID.)
@@ -13,6 +16,8 @@ Download with [composer](https://getcomposer.org/Composer-Setup.exe)
 ```
 composer require gabot/gabot:dev-master@dev
 ```
+<br>
+
 # How to Use?
 ## Setup
 ```php
@@ -72,6 +77,9 @@ $reports->visualize(new Chart(
 ));
 ```
 ![myChart](https://i.ibb.co/dGCwdzM/myChart.png)
+<br/>
+<br/>
+
 ## Custom Reports
 ### Get
 ```php
@@ -167,6 +175,9 @@ $reports->visualize([
 ]);
 ```
 ![myChart2-myChart3-myChart4](https://i.ibb.co/y4SD6B2/my-Chart234.png)
+<br/>
+<br/>
+
 ## Realtime Reports
 ### Get
 ```php
@@ -193,6 +204,9 @@ $reports->visualize([
     }
 ]
 ```
+<br/>
+<br/>
+
 # Ready-made Report List
 | Title | Report |
 | ------------- | ------------- |
@@ -210,6 +224,8 @@ $reports->visualize([
 
 - For more information, please visit [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en)
 - Also you can use [GA4 Query Explorer](https://ga-dev-tools.google/ga4/query-explorer/)
+<br/>
+<br/>
 
 ### Add New Report To Gabot
 - You can add this template to the end of the `src/Gabot.php` file, then edit it however you want.
@@ -231,6 +247,8 @@ public function newReport(string $start_date, string $end_date): Report
 }
 ```
 - Then you can use this `$gabot->newReport("28daysAgo", "today")->get();` way like any other ready-made report
+<br/>
+<br/>
 
 # Source Code of Example
 ```html
