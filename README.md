@@ -1,13 +1,18 @@
-# Simple Bot with PHP for Google Analytics 4
-1. [Installation](https://github.com/bberkay/gabot-php#installation)
-2. [How to use?](https://github.com/bberkay/gabot-php#how-to-use)
-3. [Report List](https://github.com/bberkay/gabot-php/tree/master#ready-made-report-list)
-4. [Source Code](https://github.com/bberkay/gabot-php#source-code-of-example)
+<h1 align = "center">Simple Bot with PHP for Google Analytics 4</h1>
 
-<br>
+<h3>Table of Contents</h3>
+
+1. [Introduction](https://github.com/bberkay/gabot-php#introduction)
+2. [Installation](https://github.com/bberkay/gabot-php#installation)
+3. [How to use?](https://github.com/bberkay/gabot-php#how-to-use)
+4. [Report List](https://github.com/bberkay/gabot-php/tree/master#ready-made-report-list)
+5. [Source Code](https://github.com/bberkay/gabot-php#source-code-of-example)
+
+## Introduction
+Gabot allows users to easily retrieve their Google Analytics 4 data and use it in an integrated way with the chart.js library.  It also has the ability to create custom and/or real-time reports, along with about 11 pre-made reports, without limiting the capabilities of Google Analytics or chart.js.
 
 ## Installation
-#### What you need?
+#### What do you need?
 * [GA4 Property ID](https://support.google.com/analytics/answer/12270356?hl=en#:~:text=A%20Measurement%20ID%20is%20an,same%20as%20your%20destination%20ID.)
 * [Chart.js Library](https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js)
 * [credentials.json](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#step_1_enable_the_api)(this json file has contains keys like `type`, `project_id`, `private_key_id`, `private_key` etc.).
@@ -16,7 +21,6 @@ Download with [composer](https://getcomposer.org/Composer-Setup.exe)
 ```
 composer require gabot/gabot:dev-master@dev
 ```
-<br>
 
 # How to Use?
 ## Setup
@@ -350,3 +354,6 @@ public function newReport(string $start_date, string $end_date): Report
     </body>
 </html>
 ```
+
+<hr>
+<h5 align="center"><a href="mailto:berkaykayaforbusiness@outlook.com">berkaykayaforbusiness@outlook.com</a></h5> 
