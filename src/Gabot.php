@@ -72,7 +72,7 @@ class Gabot extends Client
 
     /**
      * Run Realtime requests
-     * @link for more info about create request: https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en
+     * @link for more info about create request: https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema?hl=en
      */
     public function runRealtimeRequest(Query $request): Report
     {
