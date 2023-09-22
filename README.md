@@ -32,6 +32,7 @@ $credentials_path = "./credentials.json path";
 $gabot = Gabot::getInstance($property_id, $credentials_path);
 ```
 ## Ready-made Reports
+Gabot has some ready-made reports like getActiveUsersByOS as seen in the example, all ready-made reports are listed in [Ready Made Report List](https://github.com/bberkay/gabot/edit/master/README.md#ready-made-report-list) section.
 ### Get
 ```php
 $reports = $gabot->getActiveUsersByOS("28daysAgo", "today");
@@ -81,6 +82,7 @@ $reports->visualize(new Chart(
 <br/>
 
 ## Custom Reports
+You can also call your own custom reports with query object as seen in example. For more information about date_ranges, dimensions and metrics check the google analytics documentation from [here.](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en)
 ### Get
 ```php
 $reports = $gabot->runRequest([
@@ -205,9 +207,9 @@ $reports->visualize([
 ]
 ```
 <br/>
-<br/>
 
-# Ready-made Report List
+## Ready-made Report List
+All reports that are available in Gabot currently, if you don't have the query you're looking for, you can learn how to add your own report to the bot from the [Add New Report](https://github.com/bberkay/gabot/edit/master/README.md#add-new-report-to-gabot) section.
 | Title | Report |
 | ------------- | ------------- |
 | Get active users by device  | getActiveUsersByDevice() |
@@ -225,9 +227,8 @@ $reports->visualize([
 - For more information, please visit [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema?hl=en)
 - Also you can use [GA4 Query Explorer](https://ga-dev-tools.google/ga4/query-explorer/)
 <br/>
-<br/>
 
-### Add New Report To Gabot
+## Add New Report To Gabot
 - You can add this template to the end of the `src/Gabot.php` file, then edit it however you want.
 ```php
 /**
@@ -247,7 +248,6 @@ public function newReport(string $start_date, string $end_date): Report
 }
 ```
 - Then you can use this `$gabot->newReport("28daysAgo", "today")->get();` way like any other ready-made report
-<br/>
 <br/>
 
 # Source Code of Example
