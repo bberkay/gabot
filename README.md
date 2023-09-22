@@ -185,6 +185,7 @@ $reports->visualize([
 <br/>
 
 ## Realtime Reports
+Apart from custom and ready-made reports, Gabot can also call real-time reports with query object and use them with chart.js as seen in example. For more information about realtime dimensions and metrics check the google analytics documentation from [here.](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema?hl=en)
 ### Get
 ```php
  print_r($gabot->runRealtimeRequest(
