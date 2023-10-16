@@ -215,7 +215,7 @@ Apart from custom and ready-made reports, Gabot can also call real-time reports 
 
 ## Ready-made Report List
 All reports that are available in Gabot currently, if you don't have the query you're looking for, you can learn how to add your own report to the bot from the [Add New Report](https://github.com/bberkay/gabot/edit/master/README.md#add-new-report-to-gabot) section.
-| Title | Report |
+| Description | Function |
 | ------------- | ------------- |
 | Get active users by device  | getActiveUsersByDevice() |
 | Get active users by operating system  | getActiveUsersByOs() |
