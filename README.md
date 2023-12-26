@@ -2,11 +2,11 @@
 
 <h3>Table of Contents</h3>
 
-1. [Introduction](https://github.com/bberkay/gabot-php#introduction)
-2. [Installation](https://github.com/bberkay/gabot-php#installation)
-3. [How to use?](https://github.com/bberkay/gabot-php#how-to-use)
-4. [Report List](https://github.com/bberkay/gabot-php/tree/master#ready-made-report-list)
-5. [Source Code](https://github.com/bberkay/gabot-php#source-code-of-example)
+1. [Introduction](#introduction)
+2. [Installation](#installation)
+3. [How to use?](#how-to-use)
+4. [Report List](#ready-made-report-list)
+5. [Source Code](#source-code-of-example)
 
 ## Introduction
 Gabot allows users to easily retrieve their Google Analytics 4 data and use it in an integrated way with the chart.js library.  It also has the ability to create custom and/or real-time reports, along with about 11 pre-made reports, without limiting the capabilities of Google Analytics or chart.js.
