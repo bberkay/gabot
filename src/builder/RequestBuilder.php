@@ -14,7 +14,7 @@ class RequestBuilder{
         $request["property"] = $property_id;
         if(is_array($query))
             throw new \Exception("Realtime requests must be Query not array");
-        print_r(array_keys(QueryBuilder::createQuery($query)));
+        //print_r(array_keys(QueryBuilder::createQuery($query)));
         return array_merge($request, QueryBuilder::createQuery($query));
     }
 
